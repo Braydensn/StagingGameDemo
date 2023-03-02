@@ -1,0 +1,47 @@
+.gameFlex{
+    background-image: linear-gradient(lightBlue, rgb(14, 126, 255));
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    margin:auto;
+    padding: 100px;
+}
+
+.gameDiv{
+    text-align: center;
+}
+
+.choicesFlex{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.panel{
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px 30px;
+    width: 220px;
+    height: 210px;
+}
+
+.result{
+    width: 100px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+button{
+    border-radius: 8px;
+    border: 1px rgb(100, 100, 100) solid;
+    background-color: rgb(190, 190, 190);
+    margin: 3px;
+    padding: 5px;
+}
+
+.choiceImage{
+    max-height:50px;
+    vertical-align: middle;
+}

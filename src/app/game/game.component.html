@@ -1,29 +1,36 @@
-<h3>Rock Paper Scissors</h3>
-<h4>Round {{rounds}}</h4>
-<div>
-    <div>
-        <h4>Player 1</h4>
-        <button (click)="playRound('rock')">Rock</button>
-        <button (click)="playRound('paper')">Paper</button>
-        <button (click)="playRound('scissors')">Scissors</button>
-        <br />
-        <p *ngIf="playerChoice == 'Pick One'; else choiceMade">{{playerChoice}}</p>
-        <ng-template #choiceMade>Selection: {{playerChoice}}</ng-template>
-    </div>
-    <h4>{{playerScore}}</h4>
+<div class="gameFlex">
+<div class="gameDiv">
+    <h3>Rock Paper Scissors</h3>
+    <h4>Round {{rounds}}</h4>
 </div>
-<div>{{result}}</div>
-
-<div>
-    <div>
-        <h4>Computer</h4>
-        <br />
-        <p *ngIf="compChoice == 'Waiting for your selection'; else gameStarted">{{compChoice}}</p>
-        <ng-template #gameStarted>Computer selected: {{compChoice}}</ng-template>
+<div class="choicesFlex">
+    <div class="gameDiv panel">
+        <div>
+            <h4>Player 1</h4>
+            <button (click)="playRound('rock')"><img class="choiceImage" src="assets/rock.png"/></button>
+            <button (click)="playRound('paper')"><img class="choiceImage" src="assets/paper.png"/></button>
+            <button (click)="playRound('scissors')"><img class="choiceImage" src="assets/scissors.png" /></button>
+            <br />
+            <p *ngIf="playerChoice == 'Pick One'; else choiceMade">{{playerChoice}}</p>
+            <ng-template #choiceMade><p>Selection: {{playerChoice}}</p></ng-template>
+        </div>
+        <h4>Score: {{playerScore}}</h4>
     </div>
-    <h4>{{compScore}}</h4>
+
+    <div class="gameDiv result">{{result}}</div>
+
+    <div class="gameDiv panel">
+        <div>
+            <h4>Computer</h4>
+            <img style="margin: 9px;" class="choiceImage" [src]="compImage"/>
+            <br />
+            <p *ngIf="compChoice == 'Waiting for your selection'; else gameStarted">{{compChoice}}</p>
+            <ng-template #gameStarted><p>Computer selected: {{compChoice}}</p></ng-template>
+        </div>
+        <h4>Score: {{compScore}}</h4>
+    </div>
 </div>
-
-<button (click)="reset()">Reset</button>
-
-
+<div class="gameDiv">
+    <button (click)="reset()">Reset</button>
+</div>
+</div>

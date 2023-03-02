@@ -11,6 +11,7 @@ export class GameComponent {
   compScore: number;
   playerChoice: string;
   compChoice: string;
+  compImage: string;
   result: string;
 
   constructor(){
@@ -19,6 +20,7 @@ export class GameComponent {
     this.compScore = 0;
     this.playerChoice = "Pick One";
     this.compChoice = "Waiting for your selection";
+    this.compImage = "assets/clock.png";
     this.result = "VS";
   }
 
@@ -28,6 +30,7 @@ export class GameComponent {
 
     let choices: string[] = ["rock", "paper", "scissors"];
     this.compChoice = choices[Math.floor(Math.random() * 3)];
+    this.compImage = "assets/" + this.compChoice + ".png";
     
     if(choice === this.compChoice){
       this.result = "It's a tie!"
@@ -65,6 +68,7 @@ export class GameComponent {
     this.compScore = 0;
     this.playerChoice = "Pick One";
     this.compChoice = "Waiting for your selection";
+    this.compImage = "assets/clock.png";
     this.result = "VS";
   }
 
